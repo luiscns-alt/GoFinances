@@ -28,9 +28,8 @@ export function Dashboard() {
                             <UserName>Name </UserName>
                         </User>
                     </UserInfo>
+                    <Icon name="power" />
                 </UserWrapper>
-
-                <Icon name="power" />
             </Header>
         </Container>
     );
