@@ -54,3 +54,4 @@ buck-out/
 web-build/
 dist/
 yarn.lock
+package-lock.json
