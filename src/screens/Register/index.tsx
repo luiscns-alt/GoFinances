@@ -3,8 +3,8 @@ import { Keyboard, Modal, TouchableWithoutFeedback, Alert } from 'react-native';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
 import { useForm } from 'react-hook-form';
+import uuid from 'react-native-uuid';
 
 import { Button } from '../../components/Form/Button';
 import { InputForm } from '../../components/Form/InputForm';
@@ -73,10 +73,12 @@ export function Register() {
             return Alert.alert('Selecione a categoria');
 
         const newTransaction = {
+            id: String(uuid.v4()),
             name: form.name,
             amount: form.amount,
             transactionsType,
             category: category.key,
+            date: new Date(),
         };
 
         try {
@@ -86,6 +88,8 @@ export function Register() {
             const dataFormtted = [...currentData, newTransaction];
 
             await AsyncStorage.setItem(dataKey, JSON.stringify(dataFormtted));
+
+            setTransactionType('');
         } catch (error) {
             console.log(error);
             Alert.alert('Não foi possível salvar');
