@@ -48,7 +48,7 @@ export function Register() {
         name: 'Categoria',
     });
 
-    const navigation = useNavegation();
+    const navigation = useNavigation();
 
     const {
         control,
