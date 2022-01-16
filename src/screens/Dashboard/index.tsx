@@ -61,6 +61,7 @@ export function Dashboard() {
         );
 
         setData(transactionsFormatted);
+
     }
 
     useEffect(() => {

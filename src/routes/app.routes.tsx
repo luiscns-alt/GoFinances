@@ -7,7 +7,13 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Dashboard } from '../screens/Dashboard';
 import { Register } from '../screens/Register';
 
-const { Navigator, Screen } = createBottomTabNavigator();
+export type AppRoutesParamList = {
+    Listagem: undefined; // <- undefined = rota não requer parâmetros.
+    Cadastrar: undefined;
+    Resumo: undefined;
+};
+
+const { Navigator, Screen } = createBottomTabNavigator<AppRoutesParamList>();
 
 export type AppRoutesParamList = {
     Listagem: undefined; // <- undefined = rota não requer parâmetros.
