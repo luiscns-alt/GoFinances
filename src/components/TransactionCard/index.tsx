@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { categories } from '../../util/categories';
+import { categories } from '../../utils/categories';
 
 import {
     Container,

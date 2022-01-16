@@ -15,8 +15,17 @@ export type AppRoutesParamList = {
 
 const { Navigator, Screen } = createBottomTabNavigator<AppRoutesParamList>();
 
+export type AppRoutesParamList = {
+    Listagem: undefined; // <- undefined = rota não requer parâmetros.
+    Cadastrar: undefined;
+    Resumo: undefined;
+};
+
 export function AppRoutes() {
     const theme = useTheme();
+
+    const { Navigator, Screen } =
+        createBottomTabNavigator<AppRoutesParamList>();
 
     return (
         <Navigator
