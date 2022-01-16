@@ -36,11 +36,6 @@ interface FormData {
     amount: string;
 }
 
-type RegisterNavigationProps = BottomTabNavigationProp<
-    AppRoutesParamList,
-    'Cadastrar'
->;
-
 const schema = Yup.object().shape({
     name: Yup.string().required('Nome é obrigatório'),
     amount: Yup.number()
@@ -81,9 +76,7 @@ export function Register() {
     }
 
     async function handleRegister(form: FormData) {
-
-        if (!transactionsType)
-
+        if (!transactionType)
             return Alert.alert('Selecione o tipo da transação');
 
         if (category.key === 'category')
