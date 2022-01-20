@@ -65,7 +65,7 @@ export function Dashboard() {
             ),
         );
 
-        return `${lastTransaction.getDate} de ${lastTransaction.toLocaleString(
+        return `${lastTransaction.getDate()} de ${lastTransaction.toLocaleString(
             'pt-BR',
             {
                 month: 'long',
