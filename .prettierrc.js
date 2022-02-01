@@ -8,4 +8,4 @@ module.exports = {
     bracketSpacing: true,
     bracketSameLine: false,
     jsxBracketSameLine: true,
-}
+};
