@@ -1,4 +1,10 @@
-import React, { createContext, ReactNode, useContext, useState } from 'react';
+import React, {
+    createContext,
+    ReactNode,
+    useContext,
+    useEffect,
+    useState,
+} from 'react';
 
 const { CLIENT_ID } = process.env;
 const { REDIRECT_URI } = process.env;
@@ -36,6 +42,10 @@ const AuthContext = createContext({} as IAuthContextData);
 function AuthProvider({ children }: AuthProviderProps) {
     const [user, setUser] = useState<User>({} as User);
 
+    const [userStorageLoading, setUserStorageLoading] = useState(true);
+
+    const userStorageKey = '@gofinances:user';
+
     async function signInWithGoogle() {
         try {
             const RESPONSE_TYPE = 'token';
@@ -53,14 +63,20 @@ function AuthProvider({ children }: AuthProviderProps) {
                 );
                 const userInfo = await response.json();
 
-                setUser({
+                const userLogged = {
                     id: userInfo.id,
                     email: userInfo.email,
                     name: userInfo.given_name,
                     photo: userInfo.picture,
-                });
+                };
+
+                setUser(userLogged);
+                await AsyncStorage.setItem(
+                    userStorageKey,
+                    JSON.stringify(userLogged),
+                );
             }
-        } catch (error) {
+        } catch (error: any) {
             throw new Error(error);
         }
     }
@@ -84,14 +100,29 @@ function AuthProvider({ children }: AuthProviderProps) {
 
                 setUser(userLogged);
                 await AsyncStorage.setItem(
-                    '@gofinances:user',
+                    userStorageKey,
                     JSON.stringify(userLogged),
                 );
             }
-        } catch (error) {
+        } catch (error: any) {
             throw new Error(error);
         }
     }
+
+    useEffect(() => {
+        async function loadUserStorageDate() {
+            const userStoraged = await AsyncStorage.getItem('@gofinances:user');
+
+            if (userStoraged) {
+                const userLogged = JSON.parse(userStoraged) as User;
+                setUser(userLogged);
+            }
+
+            setUserStorageLoading(false);
+        }
+
+        loadUserStorageDate();
+    }, []);
 
     return (
         <AuthContext.Provider
