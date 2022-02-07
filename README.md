@@ -38,8 +38,6 @@ Principais pacotes extra instalados
 -   [react-native-svg-transformer](https://github.com/kristerkari/react-native-svg-transformer)
 -   [expo-auth-session](https://docs.expo.dev/versions/latest/sdk/auth-session/)
 -   [expo-random](https://docs.expo.dev/versions/latest/sdk/random/)
--   [victory-native](https://formidable.com/open-source/victory/docs/native/)
--   [date-fns](https://date-fns.org/)
 
 Nesta aplicação utilizamos o styled-components para customizar as classes que estilo, focando na reutilização do código.
 
