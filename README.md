@@ -2,7 +2,7 @@
 
 Aplicação Expo desenvolvida em React Native usando TypeScript.
 
-![alt text](https://github.com/luiscns-alt/gofinances/blob/main/src/assets/images/cover.png?raw=true)
+![alt text](https://github.com/luiscns-alt/gofinances/blob/main/src/assets/image/cover.png?raw=true)
 
 Crie uma conta no Expo para utilizar a autenticação.
 
