@@ -1,15 +1,23 @@
 {
-    "expo": {
-        "name": "gofinances",
-        "slug": "gofinances",
-        "scheme": "gofinances",
-        "version": "1.0.0",
-        "assetBundlePatterns": ["**/*"]
-    },
+  "expo": {
     "name": "gofinances",
-    "splash": {
-        "image": "./assets/splash.png",
-        "resizeMode": "contain",
-        "backgroundColor": "#5636D3"
+    "slug": "gofinances",
+    "scheme": "gofinances",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "owner": "luis.carlos",
+    "extra": {
+      "eas": {
+        "projectId": "80929286-83a7-4b91-8a38-a967b8ffb3a4"
+      }
     }
+  },
+  "name": "gofinances",
+  "splash": {
+    "image": "./assets/splash.png",
+    "resizeMode": "contain",
+    "backgroundColor": "#5636D3"
+  }
 }
