@@ -6,5 +6,10 @@
         "version": "1.0.0",
         "assetBundlePatterns": ["**/*"]
     },
-    "name": "gofinances"
+    "name": "gofinances",
+    "splash": {
+        "image": "./assets/splash.png",
+        "resizeMode": "contain",
+        "backgroundColor": "#5636D3"
+    }
 }
